@@ -38,6 +38,9 @@ chroot $TARGETDIR useradd mister -m  -G sudo -s /bin/bash
 chroot $TARGETDIR chpasswd << 'END'
 mister:mister
 END
+chroot $TARGETDIR chpasswd << 'END'
+root:1
+END
 chroot $TARGETDIR apt-get update
 # there is a bug with new versions of firefox on arm
 # before latest 17x ubuntu - https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1711337
